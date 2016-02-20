@@ -31,7 +31,7 @@ module.exports =  (cfg) => {
     return stat.replace(/\W+/g, '_');
   }
 
-  const key = (stat) => {
+  const metric = (stat) => {
 
     return clean(`.${env}.${app}.${underscore(stat)}.${hostname}`);
   }
@@ -52,44 +52,44 @@ module.exports =  (cfg) => {
 
     timing: (stat, value) => {
 
-      currentKey = key(stat);
-      client.increment(key(stat), value);
+      currentKey = metric(stat);
+      client.increment(currentKey, value);
     },
 
     increment: (stat) => {
 
-      currentKey = key(stat);
-      client.increment(key(stat));
+      currentKey = metric(stat);
+      client.increment(currentKey);
     },
 
     decrement: (stat) => {
 
-      currentKey = key(stat);
-      client.decrement(key(stat));
+      currentKey = metric(stat);
+      client.decrement(currentKey);
     },
 
     histogram: (stat, value) => {
 
-      currentKey = key(stat);
-      client.histogram(key(stat), value);
+      currentKey = metric(stat);
+      client.histogram(currentKey, value);
     },
 
     gauge: (stat, value) => {
 
-      currentKey = key(stat);
-      client.gauge(key(stat), value);
+      currentKey = metric(stat);
+      client.gauge(currentKey, value);
     },
 
     unique: (stat, value) => {
 
-      currentKey = key(stat);
-      client.unique(key(stat), value);
+      currentKey = metric(stat);
+      client.unique(currentKey, value);
     },
 
     set: (stat, value) => {
 
-      currentKey = key(stat);
-      client.set(key(stat), value);
+      currentKey = metric(stat);
+      client.set(currentKey, value);
     }
   }
 };
