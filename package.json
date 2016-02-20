@@ -1,0 +1,38 @@
+{
+  "name": "node-statsd-ns",
+  "version": "0.0.1",
+  "author": "Andrew Keig <andrew.keig@gmail.com>",
+  "description": "wraps node-statsd with metric namespacing",
+  "homepage": "https://github.com/andrewkeig/supermyx",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewkeig/node-statsd-ns"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test"
+  },
+  "dependencies": {
+    "node-statsd": "^0.1.1"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "main": "index",
+  "keywords": [
+    "node-statsd",
+    "metrics",
+    "statsd"
+  ],
+  "bugs": {
+    "url": "https://github.com/andrewkeig/node-statsd-ns/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/andrewkeig/node-statsd-ns/raw/master/LICENSE"
+    }
+  ],
+  "devDependencies": {
+    "mocha": "^2.4.5"
+  }
+}
