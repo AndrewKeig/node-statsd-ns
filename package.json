@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "Andrew Keig <andrew.keig@gmail.com>",
   "description": "wraps node-statsd with metric namespacing",
-  "homepage": "https://github.com/andrewkeig/supermyx",
+  "homepage": "https://github.com/andrewkeig/node-statsd-ns",
   "repository": {
     "type": "git",
     "url": "https://github.com/andrewkeig/node-statsd-ns"
