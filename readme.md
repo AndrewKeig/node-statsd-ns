@@ -1,14 +1,6 @@
 # node-statsd-ns
 
-node-statsd-ns wraps `node-statsd` with metric namespacing.
-
-Simply put this module will call the equivelent metric type from `node-statsd` creating a stat name like so:
-
-`env.appname.stat.hostname`
-
-Which will create a metric in statsd:
-
-`.dev.api.airasoul_inc.local_machine`
+node-statsd-ns wraps `node-statsd` with metric namespacing `env.appname.stat.hostname`.
 
 
 ## Install
@@ -18,6 +10,13 @@ $ npm install node-statsd-ns --save
 ```
 
 ## Setup
+
+
+This module will call the equivelent metric type from `node-statsd` creating a stat name like so, based on the below config and call.
+
+
+`.dev.api.airasoul_inc.local_machine`
+
 
 ```
 
