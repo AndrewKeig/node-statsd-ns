@@ -19,7 +19,6 @@ This module will call the equivelent metric type from `node-statsd` creating a s
 
 
 ```
-
 const config = {
   host: "statsd.somewhere.com",
   port: "8125",
