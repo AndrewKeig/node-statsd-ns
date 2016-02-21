@@ -4,7 +4,13 @@ const StatsD = require('node-statsd');
 
 let client;
 
-module.exports =  (cfg) => {
+module.exports =  (cfg, options) => {
+
+  options = options || {};
+  options.clean = options.clean || '';
+  options.app = options.app || 'app';
+  options.env = options.env || 'dev';
+  options.hostname = options.hostname || 'localhost';
 
   const init = () => {
 
@@ -13,13 +19,13 @@ module.exports =  (cfg) => {
       return client;
     }
 
-    client = new StatsD({ host: cfg.host, port: cfg.port, prefix: cfg.prefix});
+    client = new StatsD(cfg);
 
     return client;
   }
 
   const clean = (stat) => {
-    stat = stat.replace(cfg.clean, '')
+    stat = stat.replace(options.clean, '')
     stat = stat.replace('._', '.');
     stat = stat.replace('__.', '.');
     stat = stat.replace('_.', '.');
@@ -37,9 +43,9 @@ module.exports =  (cfg) => {
   }
 
   let currentKey = '';
-  let env = underscore(cfg.env);
-  let app = underscore(cfg.app);
-  let hostname = underscore(cfg.hostname);
+  let env = underscore(options.env);
+  let app = underscore(options.app);
+  let hostname = underscore(options.hostname);
 
   init();
 
