@@ -1,6 +1,6 @@
 {
   "name": "node-statsd-ns",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Andrew Keig <andrew.keig@gmail.com>",
   "description": "wraps node-statsd with metric namespacing",
   "homepage": "https://github.com/andrewkeig/node-statsd-ns",

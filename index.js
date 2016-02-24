@@ -51,7 +51,7 @@ module.exports =  (cfg, options) => {
 
   return {
 
-    key: (stat, value) => {
+    key: () => {
 
       return currentKey;
     },
@@ -59,7 +59,7 @@ module.exports =  (cfg, options) => {
     timing: (stat, value) => {
 
       currentKey = metric(stat);
-      client.increment(currentKey, value);
+      client.timing(currentKey, value);
     },
 
     increment: (stat) => {
